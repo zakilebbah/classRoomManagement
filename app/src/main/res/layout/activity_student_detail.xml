@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StudentDetail">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:theme="@style/Theme.ClassesManagement.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            app:title="Student"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.ClassesManagement.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="70dp"
+        >
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="10dp"
+
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="Nom">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nom"
+                android:focusable="true"
+                android:inputType="text"
+                android:imeOptions="actionDone"
+                android:lines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="10dp"
+
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="Prenom">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:focusable="true"
+                android:id="@+id/prenom"
+                android:inputType="text"
+                android:imeOptions="actionDone"
+                android:lines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="10dp"
+
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="Email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:focusable="true"
+                android:id="@+id/email"
+                android:inputType="text"
+                android:imeOptions="actionDone"
+                android:lines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="10dp"
+
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="Tel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:focusable="true"
+                android:id="@+id/tel"
+                android:inputType="phone"
+                android:imeOptions="actionDone"
+                android:lines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:layout_margin="10dp"
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+
+            />
+
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
