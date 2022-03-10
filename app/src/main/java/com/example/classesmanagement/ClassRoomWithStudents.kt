@@ -5,16 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.classesmanagement.adapters.StudentAdapter
 import com.example.classesmanagement.models.*
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.util.*
 import java.util.Collections.addAll
 
 class ClassRoomWithStudents : AppCompatActivity() {
@@ -33,8 +37,13 @@ class ClassRoomWithStudents : AppCompatActivity() {
         grade = findViewById(R.id.grade)
         getStudents()
         initClassRoom()
+
         button?.setOnClickListener { view ->
             addStudent()
+        }
+        var saveButton: FloatingActionButton = findViewById(R.id.fab)
+        saveButton.setOnClickListener {view ->
+            onSaveButtonclick(view)
         }
 //        addStudent()
     }
@@ -82,6 +91,23 @@ class ClassRoomWithStudents : AppCompatActivity() {
                 grade.text = classe.grade.toString().toEditable()
             }
         }
+    }
+    private fun onSaveButtonclick(view0: View) {
+        val db = AppDatabase.getInstance(this)
+
+        if (nom.text.toString() == "" && grade.text.toString() == "") {
+            Snackbar.make(view0, "Please fill in the info", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+        }
+        else {
+            val class0 = Classe(cid = id,name = nom.text.toString(), grade = grade.text.toString(), date = Date().toString())
+
+            GlobalScope.launch {
+                db?.ClasseDao()?.update(class0)
+
+            }
+        }
+        finish()
     }
 }
 

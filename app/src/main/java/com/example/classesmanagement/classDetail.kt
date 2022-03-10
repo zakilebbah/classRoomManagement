@@ -57,6 +57,7 @@ class ClassDetail : AppCompatActivity() {
 
             }
         }
+        finish()
     }
 //    override fun onSupportNavigateUp(): Boolean {
 //        val navController = findNavController(R.id.nav_host_fragment_content_class_detail)

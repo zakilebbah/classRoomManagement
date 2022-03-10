@@ -1,10 +1,7 @@
 package com.example.classesmanagement.models
 
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface ClasseDao {
@@ -19,7 +16,8 @@ interface ClasseDao {
 
     @Insert
     fun insertClass(classe: Classe)
-
+    @Update(entity = Classe::class)
+    fun update(classe: Classe)
     @Delete
     fun delete(classe: Classe)
 }
